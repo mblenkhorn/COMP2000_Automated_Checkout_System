@@ -1,18 +1,34 @@
 package com;
 
 
+import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class AdminUser implements IControllerAdmin, IObserverAdmin {
     public StockOrders stockOrders;
 
-    public String userName = "Adam";
+    public String userName;
 
-    public String password = "33333";
+    public String password;
 
-    public void adminLogin() {
+    public void adminLogin(JTextField usernameField, JPasswordField passwordField) {
 //begin of modifiable zone(JavaCode)......C/04c97770-dd62-4da7-8b88-16fea723b0d7
+        StockDatabase databaseUser = new StockDatabase();
+        AdminUser user = new AdminUser();
+
+        for(int index = 0; index < databaseUser.adminUsers.size(); index++)
+        {
+            if(usernameField.getText().equals(databaseUser.adminUsers.get(index).userName)
+                    && passwordField.getText().equals(databaseUser.adminUsers.get(index).password))
+            {
+                System.out.print("Hello World");
+            }
+        }
+
+
+
+
 
 //end of modifiable zone(JavaCode)........E/04c97770-dd62-4da7-8b88-16fea723b0d7
     }
@@ -23,8 +39,21 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 //end of modifiable zone(JavaCode)........E/cdfb3af3-d9b5-401d-803b-c1f6a61663db
     }
 
-    public void replenishStockWarning() {
+    public void replenishStockWarning(JLabel notifier) {
 //begin of modifiable zone(JavaCode)......C/d009cb0c-2980-482c-9d04-4959a9dd8944
+        int count = 0;
+
+        StockDatabase database = new StockDatabase();
+
+        for(int index = 0; index < database.stockItems.size(); index++)
+        {
+            count++;
+        }
+
+        if(count < 3)
+        {
+            notifier.setText("Your stock is almost depleted!. You need to order some stock!");
+        }
 
 //end of modifiable zone(JavaCode)........E/d009cb0c-2980-482c-9d04-4959a9dd8944
     }
@@ -41,7 +70,7 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 //end of modifiable zone(JavaCode)........E/c314ea4f-fe00-4f3f-8f89-ba7205e74287
     }
 
-    public void createAccount() {
+    public void createAccount(JTextField usernameField, JPasswordField passwordField) {
 //begin of modifiable zone(JavaCode)......C/1498d2f0-bee4-4c02-894b-0948ae2b6ffa
         try{
             String filePath = "Resources\\accounts.txt";
@@ -50,6 +79,8 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
             StockDatabase databaseUser = new StockDatabase();
 
             AdminUser user = new AdminUser();
+            user.userName = usernameField.getText();
+            user.password = passwordField.getText();
 
             databaseUser.adminUsers.add(user);
 
