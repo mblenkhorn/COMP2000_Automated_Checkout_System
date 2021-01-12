@@ -1,5 +1,6 @@
 package com;
 
+import javax.swing.*;
 import java.util.*;
 
 public class StockDatabase implements IModelSubject {
@@ -13,8 +14,11 @@ public class StockDatabase implements IModelSubject {
 //end of modifiable zone(JavaCode)........E/eead22e9-f6a3-4475-b4a8-a52eebdaafc7
     }
 
-    public void addStock(Stock newStock) {
+    public void addStock(Stock newStock, JTextField barCodeInput, JTextField nameInput, JTextField priceInput) {
 //begin of modifiable zone(JavaCode)......C/a8d17de0-d8e6-4bdc-85b5-fff935603d17
+        newStock.setBarCode(Integer.parseInt(barCodeInput.getText()));
+        newStock.setName(nameInput.getText());
+        newStock.setPrice(Float.parseFloat(priceInput.getText()));
         stockItems.add(newStock);
 
 //end of modifiable zone(JavaCode)........E/a8d17de0-d8e6-4bdc-85b5-fff935603d17
