@@ -14,6 +14,8 @@ public class Stock {
 //end of modifiable zone(JavaCode)........E/b090537f-16c4-40ab-bbd8-07aabd2a6cf3
 //begin of modifiable zone(JavaReturned)..C/b090537f-16c4-40ab-bbd8-07aabd2a6cf3
 
+        return barCode;
+
 //end of modifiable zone(JavaReturned)....E/b090537f-16c4-40ab-bbd8-07aabd2a6cf3
     }
 
@@ -25,6 +27,8 @@ public class Stock {
 
     public String getName() {
 //begin of modifiable zone(JavaCode)......C/f9898143-9e32-4f3d-bb15-3957d8d25a4d
+
+        return name;
 
 //end of modifiable zone(JavaCode)........E/f9898143-9e32-4f3d-bb15-3957d8d25a4d
 //begin of modifiable zone(JavaReturned)..C/f9898143-9e32-4f3d-bb15-3957d8d25a4d
@@ -40,6 +44,8 @@ public class Stock {
 
     public float getPrice() {
 //begin of modifiable zone(JavaCode)......C/8ca0e02d-1971-428d-a238-618f10af40a5
+
+        return price;
 
 //end of modifiable zone(JavaCode)........E/8ca0e02d-1971-428d-a238-618f10af40a5
 //begin of modifiable zone(JavaReturned)..C/8ca0e02d-1971-428d-a238-618f10af40a5
