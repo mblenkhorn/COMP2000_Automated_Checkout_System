@@ -13,8 +13,9 @@ public class StockDatabase implements IModelSubject {
 //end of modifiable zone(JavaCode)........E/eead22e9-f6a3-4475-b4a8-a52eebdaafc7
     }
 
-    public void addStock() {
+    public void addStock(Stock newStock) {
 //begin of modifiable zone(JavaCode)......C/a8d17de0-d8e6-4bdc-85b5-fff935603d17
+        stockItems.add(newStock);
 
 //end of modifiable zone(JavaCode)........E/a8d17de0-d8e6-4bdc-85b5-fff935603d17
     }
