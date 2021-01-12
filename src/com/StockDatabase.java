@@ -1,10 +1,11 @@
 package com;
 
+import java.util.*;
 
 public class StockDatabase implements IModelSubject {
-    public Stock[] stockItems;
+    public ArrayList<Stock> stockItems = new ArrayList<Stock>();
 
-    public AdminUser[] adminUsers;
+    public ArrayList<AdminUser> adminUsers = new ArrayList<AdminUser>();
 
     public void removeStock() {
 //begin of modifiable zone(JavaCode)......C/eead22e9-f6a3-4475-b4a8-a52eebdaafc7
