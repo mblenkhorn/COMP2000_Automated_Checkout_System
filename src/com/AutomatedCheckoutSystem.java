@@ -47,12 +47,13 @@ public class AutomatedCheckoutSystem extends JFrame
     {
         loginButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                //loginButton.setVisible(false);
-                //usernamePrompt.setVisible(false);
-                //usernameInput.setVisible(false);
-                //passwordPrompt.setVisible(false);
-                //passwordInput.setVisible(false);
+            public void actionPerformed(ActionEvent e)
+            {
+                AdminUser user = new AdminUser();
+                user.adminLogin(usernameInput, passwordField1);
+                programView.remove(1);
+                user.replenishStockWarning(loginLabelNotifier);
+
             }
         });
 
@@ -60,9 +61,11 @@ public class AutomatedCheckoutSystem extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 AdminUser user = new AdminUser();
-                user.createAccount();
+                user.createAccount(usernameInput, passwordField1);
+                loginButton.setEnabled(true);
             }
         });
+        databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(500, 300));
