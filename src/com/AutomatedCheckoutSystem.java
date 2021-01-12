@@ -55,6 +55,14 @@ public class AutomatedCheckoutSystem extends JFrame
                 //passwordInput.setVisible(false);
             }
         });
+
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AdminUser user = new AdminUser();
+                user.createAccount();
+            }
+        });
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(500, 300));
