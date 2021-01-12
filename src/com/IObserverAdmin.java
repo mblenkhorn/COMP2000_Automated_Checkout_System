@@ -1,8 +1,10 @@
 package com;
 
 
+import javax.swing.*;
+
 public interface IObserverAdmin {
-    void replenishStockWarning();
+    void replenishStockWarning(JLabel notifier);
 
     void updateOnDelivery();
 

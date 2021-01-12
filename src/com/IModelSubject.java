@@ -4,7 +4,7 @@ package com;
 public interface IModelSubject {
     void removeStock();
 
-    void addStock();
+    void addStock(Stock newStock);
 
     void editStock();
 
