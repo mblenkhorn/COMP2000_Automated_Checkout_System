@@ -42,7 +42,6 @@ public class AutomatedCheckoutSystem extends JFrame
     private JLabel totalChange;
     private JTextArea scannedItemsDisplay;
 
-    private int amount = 0;
 
     public AutomatedCheckoutSystem()
     {
@@ -54,19 +53,6 @@ public class AutomatedCheckoutSystem extends JFrame
                 //usernameInput.setVisible(false);
                 //passwordPrompt.setVisible(false);
                 //passwordInput.setVisible(false);
-                programView.remove(1);
-
-                amount = 5;
-
-                if(amount < 3)
-                {
-                    loginLabelNotifier.setText("You need to order some stock to replenish the database");
-                }else{
-                    loginLabelNotifier.setText("Welcome Admin");
-                }
-
-
-
             }
         });
         this.setContentPane(mainPanel);
