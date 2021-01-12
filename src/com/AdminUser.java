@@ -1,12 +1,15 @@
 package com;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class AdminUser implements IControllerAdmin, IObserverAdmin {
     public StockOrders stockOrders;
 
-    public String userName;
+    public String userName = "Adam";
 
-    public String password;
+    public String password = "33333";
 
     public void adminLogin() {
 //begin of modifiable zone(JavaCode)......C/04c97770-dd62-4da7-8b88-16fea723b0d7
@@ -40,6 +43,39 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 
     public void createAccount() {
 //begin of modifiable zone(JavaCode)......C/1498d2f0-bee4-4c02-894b-0948ae2b6ffa
+        try{
+            String filePath = "Resources\\accounts.txt";
+            FileWriter writer = new FileWriter(filePath);
+
+            StockDatabase databaseUser = new StockDatabase();
+
+            AdminUser user = new AdminUser();
+
+            databaseUser.adminUsers.add(user);
+
+            for(int index = 0; index < databaseUser.adminUsers.size(); index++)
+            {
+                String userAccountDataRow = "";
+
+                if(index > 0)
+                {
+                    userAccountDataRow += "\n";
+                }
+
+                userAccountDataRow += "|" + databaseUser.adminUsers.get(index).userName;
+                userAccountDataRow += "|" + databaseUser.adminUsers.get(index).password;
+
+                writer.write(userAccountDataRow);
+            }
+
+            writer.close();
+            System.out.println("File Write successful");
+
+        }catch(IOException exception)
+        {
+            exception.printStackTrace();
+        }
+
 
 //end of modifiable zone(JavaCode)........E/1498d2f0-bee4-4c02-894b-0948ae2b6ffa
     }
