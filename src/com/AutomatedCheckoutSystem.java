@@ -104,6 +104,22 @@ public class AutomatedCheckoutSystem extends JFrame
             }
         });
 
+        payWithCashButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CashPayment payment = new CashPayment();
+                payment.startPayment(cashInput, totalCost);
+            }
+        });
+
+        payWithCardButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardPayment payment = new CardPayment();
+                payment.startTransaction(cardPinInput, cardVerifier);
+            }
+        });
+
 
         databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
