@@ -26,26 +26,29 @@ public class CardPayment extends PaymentMethod {
     }
 
 
-    public void startTransaction(JTextField inputCard, JLabel outputLbl)
+    public void startTransaction(JTextField inputCard, JLabel outputLbl, JLabel totalCostLabel, JLabel verifier)
     {
         boolean isAccepted = acceptOrDenyPayment(inputCard);
+        String payment = "CARD";
 
         if(isAccepted)
         {
             verificationScreen.messageFromBank = "Your card is valid. The Bank has processed the transaction";
             bank.setMessage(verificationScreen.messageFromBank);
-            verificationScreen.print(outputLbl, outputLbl);
+            verificationScreen.print(verifier, outputLbl);
         }
         else
         {
             verificationScreen.messageFromBank = "Your card is valid. The Bank has processed the transaction";
             bank.setMessage(verificationScreen.messageFromBank);
-            verificationScreen.print(outputLbl, outputLbl);
+            verificationScreen.print(verifier, outputLbl);
         }
+
+        Receipt receipt = new Receipt(payment, totalCostLabel);
     };
 
     //NOT USED
-    public void startPayment(JTextField inputMoney, JLabel totalCost)
+    public void startPayment(JTextField inputCard, JLabel outputLbl, JLabel totalCostLabel, JLabel changeLabel)
     {
         System.out.print("HELLO WORLD");
     };
