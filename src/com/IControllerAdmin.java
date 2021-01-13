@@ -6,7 +6,7 @@ import javax.swing.*;
 public interface IControllerAdmin {
     void adminLogin(JTextField userNameField, JPasswordField passwordField);
 
-    void adminAccessStock();
+    void adminAccessStock(JTextArea textDisplay);
 
     void orderStock();
 
