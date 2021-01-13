@@ -10,6 +10,7 @@ public class Kiosk implements IView {
         for(int i = 0; i < scannedItems.size(); i++)
         {
             scannedStockOutput.append(scannedItems.get(i).getName() + " " +  scannedItems.get(i).getPrice() + "\n");
+            System.out.print(scannedItems.get(i).getName() + " " +  scannedItems.get(i).getPrice() + "\n");
         }
 
 //end of modifiable zone(JavaCode)........E/799925c8-54c9-4074-a624-3029f91912c6
