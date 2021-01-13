@@ -1,0 +1,4 @@
+1011|Apples|1.25
+1001|Oranges|1.25
+1001|Bananas|1.25
+1001|Grapes|1.25
