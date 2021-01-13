@@ -1,12 +1,16 @@
 package com;
 
 import javax.swing.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class StockDatabase implements IModelSubject {
     public ArrayList<Stock> stockItems = new ArrayList<Stock>();
 
     public ArrayList<AdminUser> adminUsers = new ArrayList<AdminUser>();
+
+    String filePath = "Resources\\data.txt";
 
     public void removeStock() {
 //begin of modifiable zone(JavaCode)......C/eead22e9-f6a3-4475-b4a8-a52eebdaafc7
@@ -34,6 +38,40 @@ public class StockDatabase implements IModelSubject {
 //begin of modifiable zone(JavaCode)......C/0cdd81ce-d018-487c-a2a1-e42e31efd7da
 
 //end of modifiable zone(JavaCode)........E/0cdd81ce-d018-487c-a2a1-e42e31efd7da
+    }
+
+    public void saveStock(){
+        try
+        {
+            FileWriter writer = new FileWriter(filePath);
+
+            for(int index = 0; index < stockItems.size(); index++)
+            {
+                String dataRow = "";
+
+                if(index > 0 )
+                {
+                    dataRow += "\n";
+                }
+
+                String barCodeToString = Integer.toString(stockItems.get(index).getBarCode());
+                dataRow += barCodeToString;
+
+                dataRow += "|" + stockItems.get(index).getName();
+
+                String priceToString = Float.toString(stockItems.get(index).getPrice());
+                dataRow += "|" + priceToString;
+
+                writer.write(dataRow);
+            }
+
+            writer.close();
+            System.out.println("User File Successfully Saved");
+        }
+        catch(IOException exception)
+        {
+            exception.printStackTrace();
+        }
     }
 
 }
