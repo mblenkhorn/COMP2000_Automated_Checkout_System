@@ -2,6 +2,7 @@ package com;
 
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public interface IModelSubject {
     void removeStock();
@@ -10,6 +11,6 @@ public interface IModelSubject {
 
     void editStock(JTextField stockIndexInput, JTextField barCodeInput, JTextField nameInput, JTextField priceInput);
 
-    void updateStockDatabase(JTextArea textDisplay);
+    void updateStockDatabase(JTextArea textDisplay, ArrayList<Stock> stockItems);
 
 }
