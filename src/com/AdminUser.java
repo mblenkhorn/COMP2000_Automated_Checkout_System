@@ -108,10 +108,15 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
         stockOrders.setQuantity(3);
         StockDatabase database = new StockDatabase();
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < stockOrders.quantity; i++)
         {
-            database.stockItems.add(stockOrder);
+            stockOrder.setBarCode(1001);
+            stockOrder.setName("Apples");
+            stockOrder.setPrice(1.24f);
+            stocks.add(stockOrder);
         }
+
+        database.updateStockDatabase(textDisplay, stocks);
 
         int j = 0;
         int waitForSeconds = 100;
@@ -130,7 +135,7 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 //begin of modifiable zone(JavaCode)......C/c314ea4f-fe00-4f3f-8f89-ba7205e74287
         outputLbl.setText("Your order has now been delivered" + " Click on the Database tab!");
         StockDatabase stockDatabase = new StockDatabase();
-        stockDatabase.updateStockDatabase(textDisplay);
+        stockDatabase.updateStockDatabase(textDisplay, stocks);
 
 //end of modifiable zone(JavaCode)........E/c314ea4f-fe00-4f3f-8f89-ba7205e74287
     }
