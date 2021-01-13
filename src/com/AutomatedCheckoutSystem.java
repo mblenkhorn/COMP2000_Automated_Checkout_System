@@ -96,6 +96,14 @@ public class AutomatedCheckoutSystem extends JFrame
             }
         });
 
+        scanStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Customers customer = new Customers();
+                customer.scanStock(scannedItemsDisplay, loginLabelNotifier, totalCost);
+            }
+        });
+
 
         databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
