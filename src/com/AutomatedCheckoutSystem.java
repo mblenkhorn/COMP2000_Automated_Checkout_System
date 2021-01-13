@@ -108,7 +108,7 @@ public class AutomatedCheckoutSystem extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 Customers customer = new Customers();
-                customer.PayWithCash(cashInput, totalCost);
+                customer.PayWithCash(cashInput, totalCost, totalChange);
             }
         });
 
@@ -116,7 +116,7 @@ public class AutomatedCheckoutSystem extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 Customers customer = new Customers();
-                customer.PayWithCard(cardPinInput, totalCost);
+                customer.PayWithCard(cardPinInput, totalCost, totalCost, cardVerifier);
             }
         });
 
