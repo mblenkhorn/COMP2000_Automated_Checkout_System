@@ -32,7 +32,7 @@ public class StockDatabase implements IModelSubject {
         newStock.setName(nameInput.getText());
         newStock.setPrice(Float.parseFloat(priceInput.getText()));
         stockItems.add(newStock);
-        updateStockDatabase(dataDisplay);
+        updateStockDatabase(dataDisplay, stockItems);
 
 //end of modifiable zone(JavaCode)........E/a8d17de0-d8e6-4bdc-85b5-fff935603d17
     }
@@ -55,7 +55,7 @@ public class StockDatabase implements IModelSubject {
 //end of modifiable zone(JavaCode)........E/7dd1a4c1-90e8-4193-b144-a8c82f8fbbc8
     }
 
-    public void updateStockDatabase(JTextArea textDisplay) {
+    public void updateStockDatabase(JTextArea textDisplay, ArrayList<Stock> stockItems) {
 //begin of modifiable zone(JavaCode)......C/0cdd81ce-d018-487c-a2a1-e42e31efd7da
         for(int i = 0; i < stockItems.size(); i++)
         {
