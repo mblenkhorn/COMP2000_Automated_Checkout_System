@@ -24,16 +24,15 @@ public class Customers implements IControllerStrategy, IObserver {
 
     public void scanStock(JTextArea output, JLabel outputLabel, JLabel totalCost) {
 //begin of modifiable zone(JavaCode)......C/2876f45b-c7e4-4691-ac77-b313b037575e
-        for(int i = 0; i < scannedItems.size(); i++){
             stock = new Stock();
             stock.setName("Apples");
             stock.setPrice(1.24f);
             scannedItems.add(stock);
-        }
+
 
         updateDatabase(outputLabel);
         CashPayment payment = new CashPayment();
-        payment.calculateCost(totalCost);
+        payment.calculateCost(totalCost, scannedItems);
         Kiosk kiosk = new Kiosk();
         kiosk.display(output, scannedItems);
 
