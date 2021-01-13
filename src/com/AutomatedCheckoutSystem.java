@@ -66,6 +66,13 @@ public class AutomatedCheckoutSystem extends JFrame
                 loginButton.setEnabled(true);
             }
         });
+
+        addStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
         databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
