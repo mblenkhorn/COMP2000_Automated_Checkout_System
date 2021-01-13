@@ -18,5 +18,6 @@ public class Kiosk implements IView {
 
     //NOT USED
     public void print(JLabel outputLbl, JLabel outputLabel){System.out.print("Hello World");}
+    public void printOutReceipt(String payment, JLabel totalCostLabel){System.out.print("HELLO WORLD");}
 
 }
