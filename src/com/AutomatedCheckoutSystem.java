@@ -52,6 +52,7 @@ public class AutomatedCheckoutSystem extends JFrame
                 AdminUser user = new AdminUser();
                 user.adminLogin(usernameInput, passwordField1);
                 programView.remove(1);
+                user.adminAccessStock(databaseDisplay);
                 user.replenishStockWarning(loginLabelNotifier);
 
             }
