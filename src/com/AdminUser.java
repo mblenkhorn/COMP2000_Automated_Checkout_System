@@ -101,14 +101,36 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 //end of modifiable zone(JavaCode)........E/d009cb0c-2980-482c-9d04-4959a9dd8944
     }
 
-    public void orderStock() {
+    public void orderStock(Stock stockOrder, JLabel outputLbl, JTextArea textDisplay) {
 //begin of modifiable zone(JavaCode)......C/23ef2dd5-ade8-4143-aaa8-862d22f01370
+        outputLbl.setText("Your order has been processed!");
+        stockOrders = new StockOrders();
+        stockOrders.setQuantity(3);
+        StockDatabase database = new StockDatabase();
+
+        for(int i = 0; i < 3; i++)
+        {
+            database.stockItems.add(stockOrder);
+        }
+
+        int j = 0;
+        int waitForSeconds = 100;
+
+        while(j != waitForSeconds)
+        {
+            j++;
+        }
+
+        updateOnDelivery(outputLbl, textDisplay);
 
 //end of modifiable zone(JavaCode)........E/23ef2dd5-ade8-4143-aaa8-862d22f01370
     }
 
-    public void updateOnDelivery() {
+    public void updateOnDelivery(JLabel outputLbl, JTextArea textDisplay) {
 //begin of modifiable zone(JavaCode)......C/c314ea4f-fe00-4f3f-8f89-ba7205e74287
+        outputLbl.setText("Your order has now been delivered" + " Click on the Database tab!");
+        StockDatabase stockDatabase = new StockDatabase();
+        stockDatabase.updateStockDatabase(textDisplay);
 
 //end of modifiable zone(JavaCode)........E/c314ea4f-fe00-4f3f-8f89-ba7205e74287
     }
