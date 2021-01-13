@@ -1,7 +1,9 @@
 package com;
 
 
+import javax.swing.*;
+
 public interface IObserver {
-    void updateDatabase();
+    void updateDatabase(JLabel notifier);
 
 }
