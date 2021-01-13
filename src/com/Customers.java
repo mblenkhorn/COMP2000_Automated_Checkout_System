@@ -9,17 +9,17 @@ public class Customers implements IControllerStrategy, IObserver {
 
     public ArrayList<Stock> scannedItems = new ArrayList<Stock>();
 
-    public void PayWithCash(JTextField inputMoney, JLabel totalCost) {
+    public void PayWithCash(JTextField inputMoney, JLabel totalCost, JLabel changeLabel) {
 //begin of modifiable zone(JavaCode)......C/7a874ad9-e1c3-4f84-b03b-c3d7e0eb74bf
         CashPayment payment = new CashPayment();
-        payment.startPayment(inputMoney, totalCost);
+        payment.startPayment(inputMoney, totalCost, totalCost, changeLabel);
 
 //end of modifiable zone(JavaCode)........E/7a874ad9-e1c3-4f84-b03b-c3d7e0eb74bf
     }
 
-    public void PayWithCard(JTextField inputCard, JLabel outputLbl){
+    public void PayWithCard(JTextField inputCard, JLabel outputLbl, JLabel totalCostLabel, JLabel notifier){
         CardPayment payment = new CardPayment();
-        payment.startTransaction(inputCard, outputLbl);
+        payment.startTransaction(inputCard, outputLbl, totalCostLabel, notifier);
     }
 
     public void scanStock(JTextArea output, JLabel outputLabel, JLabel totalCost) {
