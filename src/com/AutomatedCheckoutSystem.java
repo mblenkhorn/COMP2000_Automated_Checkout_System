@@ -15,7 +15,6 @@ public class AutomatedCheckoutSystem extends JFrame
     private JLabel passwordPrompt;
     private JLabel loginLabelNotifier;
     private JButton addStockButton;
-    private JButton updateStockButton;
     private JButton editStockButton;
     private JButton removeStockButton;
     private JTextArea databaseDisplay;
@@ -67,12 +66,37 @@ public class AutomatedCheckoutSystem extends JFrame
             }
         });
 
+
         addStockButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                Stock stock = new Stock();
+                IModelSubject subject = new StockDatabase();
+                subject.addStock(stock, barCodeInput, stockNameInput, priceInput, databaseDisplay);
             }
         });
+
+        editStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StockDatabase database = new StockDatabase();
+                database.editStock(stockIndexInput, barCodeInput, stockNameInput, priceInput);
+            }
+        });
+
+        orderStock.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Stock stock = new Stock();
+                stock.setBarCode(Integer.parseInt(inputBarcode.getText()));
+                stock.setName(inputName.getText());
+                stock.setPrice(Float.parseFloat(inputPrice.getText()));
+                AdminUser user = new AdminUser();
+                user.orderStock(stock, replenisherLabel, databaseDisplay);
+            }
+        });
+
+
         databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
