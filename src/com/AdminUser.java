@@ -154,6 +154,4 @@ public class AdminUser implements IControllerAdmin, IObserverAdmin {
 //end of modifiable zone(JavaCode)........E/1498d2f0-bee4-4c02-894b-0948ae2b6ffa
     }
 
-    public void saveStock(){}
-
 }
