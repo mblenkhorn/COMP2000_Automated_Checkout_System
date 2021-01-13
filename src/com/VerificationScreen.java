@@ -18,5 +18,6 @@ public class VerificationScreen implements IView {
 
     //NOT USED
     public void display(JTextArea scannedStockOutput, ArrayList<Stock> scannedItems){System.out.print("Hello World");}
+    public void printOutReceipt(String payment, JLabel totalCostLabel){System.out.print("Hello World");}
 
 }
