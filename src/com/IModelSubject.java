@@ -6,10 +6,10 @@ import javax.swing.*;
 public interface IModelSubject {
     void removeStock();
 
-    void addStock(Stock newStock, JTextField barCodeInput, JTextField nameInput, JTextField priceInput);
+    void addStock(Stock newStock, JTextField barCodeInput, JTextField nameInput, JTextField priceInput, JTextArea dataDisplay);
 
-    void editStock();
+    void editStock(JTextField stockIndexInput, JTextField barCodeInput, JTextField nameInput, JTextField priceInput);
 
-    void updateStockDatabase();
+    void updateStockDatabase(JTextArea textDisplay);
 
 }

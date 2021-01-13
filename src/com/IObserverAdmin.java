@@ -6,6 +6,6 @@ import javax.swing.*;
 public interface IObserverAdmin {
     void replenishStockWarning(JLabel notifier);
 
-    void updateOnDelivery();
+    void updateOnDelivery(JLabel outputLbl, JTextArea textDisplay);
 
 }

@@ -8,7 +8,7 @@ public interface IControllerAdmin {
 
     void adminAccessStock(JTextArea textDisplay);
 
-    void orderStock();
+    void orderStock(Stock stockOrder, JLabel outputLbl, JTextArea textDisplay);
 
     void createAccount(JTextField usernameField, JPasswordField passwordField);
 
