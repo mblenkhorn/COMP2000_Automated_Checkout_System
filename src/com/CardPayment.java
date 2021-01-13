@@ -4,9 +4,9 @@ package com;
 import javax.swing.*;
 
 public class CardPayment extends PaymentMethod {
-    public VerificationScreen verificationScreen;
+    public VerificationScreen verificationScreen = new VerificationScreen();
 
-    public Bank bank;
+    public Bank bank = new Bank();
 
     public boolean acceptOrDenyPayment(JTextField inputCard) {
 //begin of modifiable zone(JavaCode)......C/c504698d-fe40-4a46-8834-9cc5ebb79b8d
@@ -38,7 +38,9 @@ public class CardPayment extends PaymentMethod {
         }
         else
         {
-            System.out.println("Your card is invalid. The transaction cannot be processed");
+            verificationScreen.messageFromBank = "Your card is valid. The Bank has processed the transaction";
+            bank.setMessage(verificationScreen.messageFromBank);
+            verificationScreen.print(outputLbl, outputLbl);
         }
     };
 
