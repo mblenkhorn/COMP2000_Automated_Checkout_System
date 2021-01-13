@@ -1,7 +1,7 @@
 package com;
 
 
-public class CardPayment {
+public class CardPayment extends PaymentMethod {
     public VerificationScreen verificationScreen;
 
     public Bank bank;
@@ -12,6 +12,6 @@ public class CardPayment {
 //end of modifiable zone(JavaCode)........E/c504698d-fe40-4a46-8834-9cc5ebb79b8d
     }
 
-    public abstract void startPayment();
+    public void startPayment(){};
 
 }

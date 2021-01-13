@@ -1,7 +1,7 @@
 package com;
 
 
-public class CashPayment {
+public class CashPayment extends PaymentMethod {
     public float cashChange;
 
     public void calculateCost() {
@@ -16,6 +16,6 @@ public class CashPayment {
 //end of modifiable zone(JavaCode)........E/33a6ad51-8fec-47ee-9f01-6938b52e94cd
     }
 
-    public abstract void startPayment();
+    public void startPayment() {};
 
 }
