@@ -107,16 +107,16 @@ public class AutomatedCheckoutSystem extends JFrame
         payWithCashButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CashPayment payment = new CashPayment();
-                payment.startPayment(cashInput, totalCost);
+                Customers customer = new Customers();
+                customer.PayWithCash(cashInput, totalCost);
             }
         });
 
         payWithCardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CardPayment payment = new CardPayment();
-                payment.startTransaction(cardPinInput, cardVerifier);
+                Customers customer = new Customers();
+                customer.PayWithCard(cardPinInput, totalCost);
             }
         });
 
