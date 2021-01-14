@@ -10,23 +10,24 @@ import java.util.Date;
 public class Receipt extends JFrame implements IView {
     public Stock[] stockItems;
 
-    public String paymentMethod;
+    public String paymentMethod; //this is the paymentMethod
 
 
     public void printOutReceipt(String payment, JLabel totalCostLabel)
     {
         try{
-            Thread.sleep(12000);
+            Thread.sleep(12000); //sleep for 12000 milliseconds
         }catch(InterruptedException exception){
             exception.printStackTrace();
         }
 
+        //THREADING
         new Runnable(){
             @Override
             public void run(){
                 System.out.println("My Thread: " + Thread.currentThread().getName());
                 try{
-                    Receipt receipt = new Receipt(payment, totalCostLabel);
+                    Receipt receipt = new Receipt(payment, totalCostLabel); //run this method within Thread
                 }catch(Exception error){
                     error.printStackTrace();
                 }
@@ -37,20 +38,20 @@ public class Receipt extends JFrame implements IView {
 
     public Receipt(String payment, JLabel totalCostLabel) {
 //begin of modifiable zone(JavaSuper).....C/d28f0793-daa3-48a3-be60-a7126e021ce6
-        paymentMethod = payment;
+        paymentMethod = payment; //assign payment to paymentMethod
         Customers customers = new Customers();
         String name = "Obscurus Supermarkets Ltd - We sell invisible items for a very reasonable price!";
         JPanel receiptPanel = new JPanel();
         JLabel nameLabel = new JLabel();
         nameLabel.setText(name);
         JLabel dateLabel = new JLabel();
-        dateLabel.setText(new SimpleDateFormat("dd-MMM-YYYY").format(new Date()));
+        dateLabel.setText(new SimpleDateFormat("dd-MMM-YYYY").format(new Date())); //gets the date from the operating system
         JTextArea itemDisplay = new JTextArea();
         itemDisplay.setForeground(Color.GRAY);
         itemDisplay.setEditable(false);
 
-        for(int i = 0; i < 10; i++){
-            itemDisplay.append("Apples " + " " + "2.50" + "\n");
+        for(int i = 0; i < 3; i++){
+            itemDisplay.append("Apples " + " " + "1.24" + "\n");
         }
 
         JLabel paymentMethodLabel = new JLabel();
@@ -58,12 +59,14 @@ public class Receipt extends JFrame implements IView {
         JLabel totalCost = new JLabel();
         totalCost.setText("£ " + totalCostLabel.getText());
 
+        //adds the components the receiptPanel
         receiptPanel.add(nameLabel);
         receiptPanel.add(dateLabel);
         receiptPanel.add(itemDisplay);
         receiptPanel.add(paymentMethodLabel);
         receiptPanel.add(totalCost);
 
+        //creates the receiptPanel pane
         this.setContentPane(receiptPanel);
         this.setLayout(new GridLayout(10, 15));
         this.setPreferredSize(new Dimension(800, 600));
