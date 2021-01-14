@@ -21,6 +21,7 @@ public class Stock {
 
     public void setBarCode(int barCode) {
 //begin of modifiable zone(JavaCode)......C/a2fa30d5-fb40-4207-94c3-7eb311d0ee6e
+        this.barCode = barCode;
 
 //end of modifiable zone(JavaCode)........E/a2fa30d5-fb40-4207-94c3-7eb311d0ee6e
     }
@@ -38,6 +39,7 @@ public class Stock {
 
     public void setName(String name) {
 //begin of modifiable zone(JavaCode)......C/2ed679d6-7b70-4b6f-961c-dfc2b7a83ff3
+        this.name = name;
 
 //end of modifiable zone(JavaCode)........E/2ed679d6-7b70-4b6f-961c-dfc2b7a83ff3
     }
@@ -55,6 +57,7 @@ public class Stock {
 
     public void setPrice(float price) {
 //begin of modifiable zone(JavaCode)......C/c885857d-ad8c-48f0-8e59-a1f0f45761c8
+        this.price = price;
 
 //end of modifiable zone(JavaCode)........E/c885857d-ad8c-48f0-8e59-a1f0f45761c8
     }
