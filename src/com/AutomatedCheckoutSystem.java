@@ -124,7 +124,7 @@ public class AutomatedCheckoutSystem extends JFrame
         databaseDisplay.setEditable(false);
         this.setContentPane(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setPreferredSize(new Dimension(500, 300));
+        this.setPreferredSize(new Dimension(1400, 800));
         this.pack();
     }
 

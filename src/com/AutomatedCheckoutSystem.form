@@ -24,7 +24,9 @@
             <constraints>
               <tabbedpane title="Kiosk"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-15659369"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="74276" class="javax.swing.JTextField" binding="barcodeInput">
@@ -47,6 +49,8 @@
                   <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-14234990"/>
+                  <foreground color="-16514044"/>
                   <text value="SCAN STOCK"/>
                 </properties>
               </component>
@@ -73,6 +77,7 @@
                   <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-4539121"/>
                   <text value="PAY CASH"/>
                 </properties>
               </component>
@@ -91,6 +96,7 @@
                   <grid row="7" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-13909227"/>
                   <text value="PAY CARD"/>
                 </properties>
               </component>
@@ -99,6 +105,7 @@
                   <grid row="6" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-2892059"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -107,6 +114,7 @@
                   <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-2892059"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -115,6 +123,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-2892059"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -190,6 +199,7 @@
               <tabbedpane title="Database"/>
             </constraints>
             <properties>
+              <background color="-8968530"/>
               <enabled value="false"/>
             </properties>
             <border type="none"/>
@@ -199,6 +209,7 @@
                   <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-16645630"/>
                   <text value="You need to Login to create, read, update and delete the contents of the database"/>
                 </properties>
               </component>
@@ -282,7 +293,7 @@
               <tabbedpane title="Order"/>
             </constraints>
             <properties>
-              <background color="-7373811"/>
+              <background color="-1979889"/>
             </properties>
             <border type="none"/>
             <children>
