@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Kiosk implements IView {
     public void display(JTextArea scannedStockOutput, ArrayList<Stock> scannedItems) {
 //begin of modifiable zone(JavaCode)......C/799925c8-54c9-4074-a624-3029f91912c6
-        for(int i = 0; i < scannedItems.size(); i++)
+        for(int i = 0; i < scannedItems.size(); i++) //before it reaches the scannedItems size
         {
             scannedStockOutput.append(scannedItems.get(i).getName() + " " +  scannedItems.get(i).getPrice() + "\n");
             System.out.print(scannedItems.get(i).getName() + " " +  scannedItems.get(i).getPrice() + "\n");
