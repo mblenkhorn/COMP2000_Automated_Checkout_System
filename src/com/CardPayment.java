@@ -36,15 +36,17 @@ public class CardPayment extends PaymentMethod {
             verificationScreen.messageFromBank = "Your card is valid. The Bank has processed the transaction";
             bank.setMessage(verificationScreen.messageFromBank); //sets the message
             verificationScreen.print(verifier, outputLbl); //runs this message with verifier and outputLbl as arguments
+            Receipt receipt = new Receipt(payment, totalCostLabel); //creates a new Receipt object called receipt with arguments payment and totalCostLabel
+            receipt.printOutReceipt(payment, totalCostLabel);
         }
         else
         {
-            verificationScreen.messageFromBank = "Your card is valid. The Bank has processed the transaction";
+            verificationScreen.messageFromBank = "Your card is invalid. The Bank cannot process the transaction";
             bank.setMessage(verificationScreen.messageFromBank); //sets the message
             verificationScreen.print(verifier, outputLbl); //runs this message with verifier and outputLbl as arguments
         }
 
-        Receipt receipt = new Receipt(payment, totalCostLabel); //creates a new Receipt object called receipt with arguments payment and totalCostLabel
+
     };
 
     //NOT USED

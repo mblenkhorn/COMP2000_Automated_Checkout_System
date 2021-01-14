@@ -22,6 +22,7 @@ public class CashPayment extends PaymentMethod {
 
         String formattedText = String.format("%.02f", cost); //format the cost by 2 decimal places and store it in a String variable called formattedText
         totalCost.setText(formattedText);
+        totalCost.setForeground(Color.WHITE);
 
 
 //end of modifiable zone(JavaCode)........E/b832e3b0-c1d2-431f-8611-661e891aa9f9
@@ -33,6 +34,7 @@ public class CashPayment extends PaymentMethod {
         cashChange = cashAmount - totalPayment; //subtract cashAmount by totalPayment and store the value in cashChange
         String formattedString = String.format("%.02f", cashChange); //format the cost by 2 decimal places and store it in a String variable called formattedText
         changeLabel.setText(formattedString);
+        changeLabel.setForeground(Color.WHITE);
 
 //end of modifiable zone(JavaCode)........E/33a6ad51-8fec-47ee-9f01-6938b52e94cd
     }
@@ -55,6 +57,7 @@ public class CashPayment extends PaymentMethod {
         }
 
         Receipt receipt = new Receipt(payment, totalCost);
+        receipt.printOutReceipt(payment, totalCost);
     };
 
     //NOT USED
